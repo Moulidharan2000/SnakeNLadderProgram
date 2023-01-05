@@ -12,12 +12,12 @@ public class SnakeNLadder {
 		System.out.print("Enter the Number of Player : ");
 		int player = scan.nextInt();
 		int position = 0;
-		int WIN_POSITION = 100;
+		final int WIN_POSITION = 100;
 		
 		if(player == 1) {
 			System.out.println("Player : "+player);
 			System.out.println("Starting Position : "+position+"\n");
-				
+			
 			while(position <= WIN_POSITION) {
 
 				int dice = 1+randomNum.nextInt(6);
@@ -26,9 +26,17 @@ public class SnakeNLadder {
 				
 				switch(options) {
 					case 1 :
-						position = position + dice;
 						System.out.println("Player Gets Ladder !!!");
-						System.out.println("Player Position : "+position+"\n");
+						position = position + dice;
+						if(position <= WIN_POSITION) {
+							System.out.println("Player Position : "+position+"\n");
+						}
+						else if(position > WIN_POSITION) {
+							position = position - dice;
+							System.out.println("Player Position : "+position+"\n");
+						}
+						else
+							System.out.println();
 						break;
 					
 					case 2 :
@@ -47,8 +55,14 @@ public class SnakeNLadder {
 						System.out.println("Player Position : "+position+"\n");
 						break;
 					}
+				if(position == WIN_POSITION) {
+					System.out.println("Player 1 Won The Game !!! ");
+					break;
 				}
+				else
+					System.out.println("-----------------------------------");
 			}
+		}
 		else
 			System.out.println("Play with Single Player!!!");
 	}
