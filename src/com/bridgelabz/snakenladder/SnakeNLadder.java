@@ -13,6 +13,7 @@ public class SnakeNLadder {
 		int player = scan.nextInt();
 		int position = 0;
 		final int WIN_POSITION = 100;
+		int dieRoll = 0;
 		
 		if(player == 1) {
 			System.out.println("Player : "+player);
@@ -23,6 +24,7 @@ public class SnakeNLadder {
 				int dice = 1+randomNum.nextInt(6);
 				System.out.println("Dice Number : "+dice+"\n");
 				int options = randomNum.nextInt(3);
+				dieRoll ++;
 				
 				switch(options) {
 					case 1 :
@@ -56,6 +58,7 @@ public class SnakeNLadder {
 						break;
 					}
 				if(position == WIN_POSITION) {
+					System.out.println("Dice Rolled : "+dieRoll+" Times \n");
 					System.out.println("Player 1 Won The Game !!! ");
 					break;
 				}
