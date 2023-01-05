@@ -18,6 +18,25 @@ public class SnakeNLadder {
 			System.out.println("Player : "+player);
 			System.out.println("Starting Position : "+position);
 			System.out.println("Dice Number : "+dice);
+			
+			int options = randomNum.nextInt(3);
+			
+			switch(options) {
+				case 1 :
+					System.out.println("Player Gets Ladder !!!");
+					System.out.println("Player Position : "+(position+dice));
+					break;
+				
+				case 2 :
+					System.out.println("Player Bit by Snake Ladder !!!");
+					System.out.println("Player Position : "+(position-dice));
+					break;
+				
+				default :
+					System.out.println("No Play");
+					System.out.println("Player Position : "+position);
+					break;
+			}
 		}
 		else
 			System.out.println("Play with Single Player!!!");
