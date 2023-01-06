@@ -42,11 +42,16 @@ public class SnakeNLadder {
 						}
 						else
 							System.out.println();
+						if(options1 ==1 && player1Position < WIN_POSITION) {
+							dice1 = 1+randomNum.nextInt(6);
+							System.out.println("Dice 2 is Rolled Again");
+							System.out.println("Dice 1 Number : "+dice1+"\n");
+						}
 						break;
 					
 					case 2 :
 						player1Position = player1Position - dice1;
-						System.out.println("Player 1 Bit by Snake Ladder !!!");
+						System.out.println("Player 1 Bit by Snake!!!");
 						if(player1Position <= 0) {
 							player1Position = 0;
 							System.out.println("Player 1 Position : "+player1Position+"\n");
@@ -88,11 +93,16 @@ public class SnakeNLadder {
 						}
 						else
 							System.out.println();
+						if(options2 ==1 && player2Position < WIN_POSITION) {
+							dice2 = 1+randomNum.nextInt(6);
+							System.out.println("Dice 2 is Rolled Again");
+							System.out.println("Dice 2 Number : "+dice2+"\n");
+						}
 						break;
 					
 					case 2 :
 						player2Position = player2Position - dice2;
-						System.out.println("Player 2 Bit by Snake Ladder !!!");
+						System.out.println("Player 2 Bit by Snake!!!");
 						if(player2Position <= 0) {
 							player2Position = 0;
 							System.out.println("Player 2 Position : "+player2Position+"\n");
